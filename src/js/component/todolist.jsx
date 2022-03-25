@@ -1,4 +1,5 @@
 import React, { useState } from "react";
+import { ListGroup } from "react-bootstrap";
 
 function Todolist() {
 	const [lista, setLista] = useState([]);
@@ -6,14 +7,19 @@ function Todolist() {
 
 	return (
 		<div className="container">
-			<h1 className="text-secondary text-center">TODO LIST</h1>
-			<div>
+			<h1 className="text-secondary text-center m-5">TODO LIST</h1>
+			<div className="todolista">
 				{lista.map(function (e, index) {
-					console.log(e);
 					return (
-						<div>
-							{e}
+						<div className="cajalista">
+							<ListGroup className="cajalista">
+								<ListGroup.Item className="lista">
+									{e}
+								</ListGroup.Item>
+							</ListGroup>
+
 							<button
+								className="boton"
 								onClick={(e) => {
 									let nuevaLista = [...lista];
 									nuevaLista.splice(index, 1);
@@ -25,19 +31,20 @@ function Todolist() {
 					);
 				})}
 			</div>
-
-			<input
-				onChange={(e) => {
-					setTexto(e.target.value);
-				}}
-				type="text"
-			/>
-			<button
-				onClick={(e) => {
-					setLista([...lista, texto]);
-				}}>
-				agregar
-			</button>
+			<div className="inpuut">
+				<input
+					onChange={(e) => {
+						setTexto(e.target.value);
+					}}
+					type="text"
+				/>
+				<button
+					onClick={(e) => {
+						setLista([...lista, texto]);
+					}}>
+					agregar
+				</button>
+			</div>
 		</div>
 	);
 }

@@ -1,2 +1,35 @@
+.cajalistaok{
+    display: flex;
+    justify-content: center;}
+    
+.cajalista{display: flex;
+    justify-content: center;
+    margin: 10px ;
+    width: 95%;
+}
+.inpuut{
+    padding-left: 400px;
+    display: flex;
+    margin: 10px;
+}
+button{background-color: cadetblue;
+    text-size-adjust: 10px;
+    color: white;
+    
+}
+input{
+    background-color: rgba(52, 93, 206, 0.349);
+color: white;}
 
+.lista{
+    background-color: rgba(52, 93, 206, 0.349);
+    color:white ;}
+.todolista{
+    background-color: rgba(0, 0, 0, 0.151);
 
+    justify-content: center;
+}
+.boton{
+    height: 30px;
+    width: 2%;
+}
