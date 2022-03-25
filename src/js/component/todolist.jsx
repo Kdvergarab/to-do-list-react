@@ -2,17 +2,16 @@ import React, { useState } from "react";
 
 function Todolist() {
 	const [lista, setLista] = useState([]);
-	const [texto, setTexto] = useState("");
+	const [texto, setTexto] = useState([]);
 
 	return (
 		<div className="container">
-			<h1 className="text-secondary text-center" m-3>
-				TODO LIST
-			</h1>
-			{lista.map(function (e, index) {
-				return (
-					<div>
-						<div className="d-flex">
+			<h1 className="text-secondary text-center">TODO LIST</h1>
+			<div>
+				{lista.map(function (e, index) {
+					console.log(e);
+					return (
+						<div>
 							{e}
 							<button
 								onClick={(e) => {
@@ -20,26 +19,25 @@ function Todolist() {
 									nuevaLista.splice(index, 1);
 									setLista(nuevaLista);
 								}}>
-								X
+								x
 							</button>
 						</div>
-					</div>
-				);
-			})}
-			<div>
-				<input
-					type="inserte contenido"
-					onChange={(e) => {
-						setTexto(e.target.value);
-					}}
-				/>
-				<button
-					onClick={() => {
-						setLista([...lista, texto]);
-					}}>
-					agregar
-				</button>
+					);
+				})}
 			</div>
+
+			<input
+				onChange={(e) => {
+					setTexto(e.target.value);
+				}}
+				type="text"
+			/>
+			<button
+				onClick={(e) => {
+					setLista([...lista, texto]);
+				}}>
+				agregar
+			</button>
 		</div>
 	);
 }
